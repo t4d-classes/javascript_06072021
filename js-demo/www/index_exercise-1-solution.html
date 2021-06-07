@@ -1,0 +1,29 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+  const myMap = (fn, arr) => {
+    const newArr = [];
+
+    for (let x = 0; x < arr.length; x++) {
+      newArr.push(fn(arr[x]));
+    }
+
+    return newArr;
+  };
+
+  const myFilter = (fn, arr) => {
+    const newArr = [];
+
+    for (let x = 0; x < arr.length; x++) {
+      if (fn(arr[x])) {
+        newArr.push(arr[x]);
+      }
+    }
+
+    return newArr;
+  };
+
+  console.log(myMap((x) => x * 2, [1, 2, 3, 4, 5]));
+  console.log(myFilter((x) => x < 4, [1, 2, 3, 4, 5]));
+</script>
