@@ -1,0 +1,24 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+  const p = {
+    firstName: "Bob",
+    lastName: "Smith",
+    address: {
+      street: "123 Oak Lane",
+      city: "Mountain View",
+      state: "CA",
+    },
+  };
+
+  const p2 = {
+    firstName: "Sally",
+    lastName: "Timmons",
+    address: p.address,
+  };
+
+  p.address.city = "San Diego";
+
+  console.log(p2.address.city);
+</script>

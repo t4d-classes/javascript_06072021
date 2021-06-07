@@ -1,0 +1,36 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+  const middleName = "Will";
+
+  const propName = "favIceCream";
+
+  const p = {
+    firstName: "Bob",
+    lastName: "Smith",
+    "crazy prop name": "this is really crazy...",
+
+    // if you are paid by the hour
+    // middleName: middleName,
+    // if you are paid salary
+    middleName, // shorthand property
+
+    // computed property
+    [propName]: "chocolate",
+ 
+    // shorthand function property
+    // getFullName: function() {
+    getFullName() {
+      return this.firstName + " " + this.lastName;
+    },
+  };
+
+  p.age = 23;
+
+  delete p.lastName;
+
+  console.log(p);
+
+  console.log(p["crazy prop name"]);
+</script>
