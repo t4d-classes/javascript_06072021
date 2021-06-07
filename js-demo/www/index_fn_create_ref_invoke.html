@@ -1,0 +1,30 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+
+  function thisIsFun(fn) {
+    /* invoked */
+    fn(console.log)
+  }
+
+  thisIsFun(function(log) {
+    log("am I called before thisIsFun or inside of thisIsFun?")
+  });
+
+  // creation
+  function somethingCool(resolve, reject) {
+
+    // function
+    resolve("a");
+  }
+
+  const p = new Promise(somethingCool /* passing the ref to a function */);
+
+  const p = new Promise((resolve, reject) => {
+
+    // function
+    resolve("a");
+  });
+
+</script>

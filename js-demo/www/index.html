@@ -2,31 +2,20 @@
 <script>
   "use strict";
 
-  const h = true;
-  const j = false;
-
-  // all values are truthy except:
-  // "" (empty string)
-  // 0 (includes number and bigint)
-  // false
-  // undefined
-  // null
-  // NaN
-
-  if (true) {
-    console.log("truthy");
-  } else {
-    console.log("falsy");
+  function add(x, y) {
+    return x + y;
   }
 
-  console.log(!true);
-  console.log(!false);
-  console.log(!0);
-  console.log(!"");
-  console.log(!1);
-  console.log(!"some value");
-  console.log(!!"some value");
+  const result = add(1, 2);
+  console.log(result);
 
-  console.log(0 || "this is cool");
-  console.log(1 && "this is cool");
+  function createPerson(fn, ln) {
+    return {
+      fn: fn,
+      ln: ln,
+    };
+  }
+
+  const p = createPerson("Bob", "Smith");
+  console.log(p);
 </script>
