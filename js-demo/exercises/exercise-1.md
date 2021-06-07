@@ -11,7 +11,7 @@ console.log(nums); // [1,2,3,4,5]
 console.log(doubleNums); // [2,4,6,8,10]
 ```
 
-Do something similar for `myFilter` as well.
+Do something similar for `myFilter` as well. To add something to an array you can use the `push` or `concat` functions. It's ok to Google the API calls.
 
 2. Ensure both your `myMap` and `myFilter` work correctly.
 
