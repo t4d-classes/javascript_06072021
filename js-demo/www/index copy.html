@@ -1,0 +1,30 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+  const nums = [1, 2, 3, 4, 5];
+
+  // imperative code
+  for (let x = 0; x < nums.length; x++) {
+    console.log(nums[x]);
+  }
+
+  // declarative code - always includes semantic meaning
+  // iterate over a data set
+  // for each element of the data set, I am going to perform a side effect
+  nums.forEach(function (num) {
+    console.log(num);
+  });
+
+  // const doubleNums = nums.map(function (num) {
+  //   return num * 2;
+  // });
+
+  const doubleNums = nums.map((num) => num * 2);
+
+  const smallNums = doubleNums.filter((num) => num < 7);
+
+  console.log(nums);
+  console.log(doubleNums);
+  console.log(smallNums);
+</script>

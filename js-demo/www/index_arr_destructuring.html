@@ -1,0 +1,30 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+  const colors = [
+    "blue",
+    "silver",
+    "purple",
+    "red",
+    "black",
+    "gray",
+    "green",
+    "orange",
+    "teal",
+  ];
+
+  const [firstColor, secondColor, , fourthColor, ...otherColors] = colors;
+
+  console.log(firstColor);
+  console.log(secondColor);
+  console.log(fourthColor);
+  console.log(otherColors);
+
+  const additionalColors = ["brown", "yellow", "chartreusse"];
+
+        // array destructuring         array literal
+  const [firstColor, ...otherColors] = ["gold", ...colors, ...additionalColors];
+
+  console.log(otherColors);
+</script>
