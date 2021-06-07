@@ -1,0 +1,39 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+  // defines g, h as a script variable
+  let g = 3;
+  console.log(window.g);
+  const h = 4;
+  console.log(window.h);
+
+  // defines h as a global variable
+  // var is for legacy code only
+  // never use var for new javascript code
+  var m = 2;
+  // window in a web browser is the global object
+  console.log(window.m);
+
+  function doIt() {
+    // all of these are defined on the stack
+    let u = 6;
+    const i = 7;
+    var o = 8;
+    // the variable is defined on the stack, and it
+    // has a pointer that points the "Bob" object
+    // on the heap
+    const p = {
+      firstName: "Bob",
+    };
+
+    p.firstName = "Tim";
+
+    let y = p;
+
+    Object.freeze(p);
+
+    y.firstName = "Tim";
+  }
+  doIt();
+</script>

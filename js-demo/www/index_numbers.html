@@ -1,0 +1,28 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+  console.log(1 / 0);
+  console.log(-1 / 0);
+
+  console.log(Infinity + Infinity);
+  console.log(Infinity * Infinity);
+  console.log(Infinity === Infinity);
+
+  console.log(Infinity / Infinity);
+
+  console.log(parseInt("zzzzz") === NaN);
+  console.log(NaN === NaN);
+  console.log(isNaN(parseInt("zzzzz")));
+
+  console.log(typeof NaN);
+
+  console.log(Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON);
+
+  console.log(Number.MAX_SAFE_INTEGER);
+  console.log(Number.MAX_SAFE_INTEGER + 1);
+  console.log(Number.MAX_SAFE_INTEGER + 2);
+
+  console.log(BigInt(Number.MAX_SAFE_INTEGER) + 1n);
+  console.log(BigInt(Number.MAX_SAFE_INTEGER) + 2n);
+</script>

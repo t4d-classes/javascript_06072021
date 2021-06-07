@@ -1,0 +1,50 @@
+<h1>Here is some content...</h1>
+
+<script>
+  let f;
+
+  // undefined - a variable that has been declared
+  // but next assigned to
+  console.log(typeof f);
+
+  f = "hello, world!";
+  console.log(typeof f);
+
+  f = 2;
+  console.log(typeof f);
+
+  f = false; // true
+  console.log(typeof f);
+
+  f = BigInt(23);
+  console.log(typeof f);
+
+  f = Symbol("desc");
+  console.log(typeof f);
+
+  // a variable that should be pointing at an object
+  // but is not pointing at one at the moment
+  f = null;
+  console.log(typeof f); // outputting object is a bug
+
+  // object literal syntax
+  f = {
+    firstName: "Bob",
+    lastName: "Smith",
+  };
+  console.log(typeof f);
+
+  // array literal syntax
+  f = [1, 2, 3, 4];
+  console.log(typeof f);
+  console.log(Array.isArray(f));
+  console.log(f instanceof Array);
+
+  f = function () {
+    console.log("do it");
+  };
+  console.log(typeof f);
+  console.log(f instanceof Object);
+  class P {}
+  console.log(typeof P);
+</script>
