@@ -1,0 +1,30 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+  // const person = {
+  //   firstName: "Bob",
+  //   lastName: "Smith",
+  //   age: 34,
+  //   jobTitle: "Industrial Engineer",
+  // };
+
+  const personStuff = {
+    carMake: "Tesla",
+    carModel: "S",
+    carPrice: 69000,
+  };
+        // object destructuring                       // object literal
+  const { firstName, age, carModel, ...otherProps } = {
+    firstName: "Bob",
+    lastName: "Smith",
+    age: 34,
+    jobTitle: "Industrial Engineer",
+    ...personStuff,
+  };
+
+  console.log(firstName);
+  console.log(age);
+  console.log(carModel);
+  console.log(otherProps);
+</script>

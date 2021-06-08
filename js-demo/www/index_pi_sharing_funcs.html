@@ -1,0 +1,26 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+  const person = {
+    getFullName() {
+      return this.firstName + " " + this.lastName;
+    },
+  };
+
+  const bob = Object.create(person);
+  bob.firstName = "Bob";
+  bob.lastName = "Smith";
+
+  const sally = Object.create(person);
+  sally.firstName = "Sally";
+  sally.lastName = "Thompkins";
+
+  console.log(bob.getFullName());
+  console.log(sally.getFullName());
+
+  console.log(bob);
+  console.log(sally);
+
+  console.log(bob.getFullName === sally.getFullName);
+</script>

@@ -1,0 +1,39 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+  class Person {
+    constructor(firstName, lastName) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+    }
+
+    getFullName() {
+      return this.firstName + " " + this.lastName;
+    }
+  }
+
+  const p1 = new Person("Bob", "Smith");
+  console.log(p1.getFullName());
+
+  function Person2(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  Person2.prototype.getFullName = function () {
+    return this.firstName + " " + this.lastName;
+  };
+
+  const p2 = new Person2("Bob", "Smith");
+  console.log(p2.getFullName());
+
+  console.log(p1);
+  console.log(p2);
+
+  console.dir(Person);
+  console.dir(Person2);
+
+  console.dir(function doIt() {});
+  console.dir(() => {});
+</script>

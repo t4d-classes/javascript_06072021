@@ -1,0 +1,41 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+  // if (!Array.prototype.doubleNumMap) {
+  //   Array.prototype.doubleNumMap = function () {
+  //     console.log("called my version of map");
+
+  //     const fn = (x) => x * 2;
+
+  //     const newArr = [];
+
+  //     for (let x = 0; x < this.length; x++) {
+  //       newArr.push(fn(this[x]));
+  //     }
+
+  //     return newArr;
+  //   };
+  // }
+
+  function doubleNumMap (arr) {
+      console.log("called my version of map");
+
+      const fn = (x) => x * 2;
+
+      const newArr = [];
+
+      for (let x = 0; x < arr.length; x++) {
+        newArr.push(fn(arr[x]));
+      }
+
+      return newArr;
+    };
+  }
+
+  const nums = [1, 2, 3, 4, 5];
+
+  const doubleNums = nums.doubleNumMap();
+
+  console.log(doubleNums);
+</script>

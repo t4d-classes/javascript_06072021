@@ -1,0 +1,27 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+  const parent = {
+    name: "Parent",
+    amt: 2000,
+  };
+
+  const child = Object.create(parent);
+  child.name = "child";
+
+  console.log(child.amt);
+  console.log(child);
+
+  child.amt = 1000;
+
+  console.log(child.amt);
+  // console.log(child);
+  // console.log(parent.amt);
+  // console.log(child.age);
+
+  delete child.amt;
+
+  console.log(child.amt);
+  console.log(child);
+</script>
