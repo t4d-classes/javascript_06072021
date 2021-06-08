@@ -2,64 +2,23 @@
 <script>
   "use strict";
 
-  class Person {
-    constructor(firstName, lastName) {
-      this.firstName = firstName;
-      this.lastName = lastName;
-    }
-
-    getFullName() {
-      return this.firstName + " " + this.lastName;
-    }
+  function doIt() {
+    console.log("did it");
   }
 
-  class Student extends Person {
-    constructor(studentId, firstName, lastName) {
-      super(firstName, lastName);
-      this.studentId = studentId;
+  function getStarted() {
+    function doSomething() {
+      // call stack
+      console.log("doSomething");
+      doIt();
     }
 
-    getRecordInfo() {
-      return this.studentId + " " + this.lastName + ", " + this.firstName;
-    }
+    // setTimeout is the host
+    setTimeout(doSomething, 2000);
+
+    // doSomething();
   }
 
-  const s1 = new Student(1, "Bob", "Smith");
-  console.log(s1.getFullName());
-  console.log(s1.getRecordInfo());
-
-  function Person2(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
-
-  Person2.prototype.getFullName = function () {
-    return this.firstName + " " + this.lastName;
-  };
-
-  function Student2(studentId, firstName, lastName) {
-    this.__super(firstName, lastName);
-    this.studentId = studentId;
-  }
-
-  Student2.prototype = Object.create(Person2.prototype);
-  Student2.prototype.constructor = Student2;
-  Student2.prototype.__super = Person2;
-
-  Student2.prototype.getRecordInfo = function () {
-    return this.studentId + " " + this.lastName + ", " + this.firstName;
-  };
-
-  const s2 = new Student2(1, "Bob", "Smith");
-  console.log(s2.getFullName());
-  console.log(s2.getRecordInfo());
-
-  console.log(s1);
-  console.log(s2);
-
-  console.dir(Student);
-  console.dir(Student2);
-
-  console.dir(function doIt() {});
-  console.dir(() => {});
+  getStarted();
+  console.log("waiting");
 </script>
