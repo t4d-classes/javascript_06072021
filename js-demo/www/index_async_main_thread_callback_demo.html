@@ -1,0 +1,24 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+  function doIt() {
+    console.log("did it");
+  }
+
+  function getStarted() {
+    function doSomething() {
+      // call stack
+      console.log("doSomething");
+      doIt();
+    }
+
+    // setTimeout is the host
+    setTimeout(doSomething, 2000);
+
+    // doSomething();
+  }
+
+  getStarted();
+  console.log("waiting");
+</script>

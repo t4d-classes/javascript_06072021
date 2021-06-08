@@ -13,10 +13,9 @@
   xhr.open("GET", "http://localhost:5050/cars");
   xhr.send();
 
-  // Implement the following "myFetch" function.
-  // I should be able to copy and paste the following code into your file, and it should work as is.
-  // In your solution, you must use the XHR API to make the Ajax call. You may not use the newer Fetch api.
-
-  myFetch("http://localhost:5050/cars").then(cars => console.log(cars));
-
+  fetch("http://localhost:5050/cars")
+    .then((res) => res.json())
+    .then((cars) => console.log(cars));
+    
+  console.log("waiting");
 </script>

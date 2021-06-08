@@ -1,0 +1,74 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+  // setTimeout(() => {
+  //   console.log("a");
+
+  //   setTimeout(() => {
+  //     console.log("b");
+  //   }, 1000);
+  // }, 2000);
+
+  class Promise2 {
+    constructor(asyncOpFn) {
+      this._resolveFns = [];
+      this._rejectFns = [];
+
+      const runResolveFns = (result) => {
+        this._resolveFns.forEach((resolveFn) => resolveFn(result));
+      };
+
+      const runRejectFns = (result) => {
+        this._rejectFns.forEach((rejectFn) => rejectFn(result));
+      };
+
+      asyncOpFn(runResolveFns, runRejectFns);
+    }
+
+    then(handleResolveFn) {
+      this._resolveFns.push(handleResolveFn);
+    }
+
+    catch(handleRejectFn) {
+      this._rejectFns.push(handleRejectFn);
+    }
+  }
+
+  const doTimeoutOp = (result) => {
+    const p1 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(result);
+      }, 500);
+    });
+    return p1;
+  };
+
+  // doTimeoutOp("a")
+  //   .then((r) => {
+  //     console.log(r);
+  //     return doTimeoutOp("b");
+  //   })
+  //   .then((r) => {
+  //     console.log(r);
+  //     return doTimeoutOp("c");
+  //   })
+  //   .then((r) => {
+  //     console.log(r);
+  //   });
+
+  // console.log("waiting");
+
+  const doIt = async () => {
+    let r = await doTimeoutOp("a");
+    console.log(r);
+
+    r = await doTimeoutOp("b");
+    console.log(r);
+
+    r = await doTimeoutOp("c");
+    console.log(r);
+  };
+
+  doIt();
+</script>
