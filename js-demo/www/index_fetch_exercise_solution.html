@@ -1,0 +1,30 @@
+<h1>Here is some content...</h1>
+<script>
+  "use strict";
+
+  // Implement the following "myFetch" function.
+  // I should be able to copy and paste the following code into your file, and it should work as is.
+  // In your solution, you must use the XHR API to make the Ajax call. You may not use the newer Fetch api.
+
+  const myFetch = (url) => {
+    const p1 = new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+
+      xhr.addEventListener(
+        "readystatechange",
+        function handleReadyStateChange() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            resolve(JSON.parse(xhr.responseText));
+          }
+        }
+      );
+
+      xhr.open("GET", url);
+      xhr.send();
+    });
+
+    return p1;
+  };
+
+  myFetch("http://localhost:5050/cars").then((cars) => console.log(cars));
+</script>

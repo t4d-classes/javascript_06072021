@@ -1,22 +1,13 @@
-<h1>Here is some content...</h1>
-<script>
-  "use strict";
+<!DOCTYPE html>
 
-  const xhr = new XMLHttpRequest();
+<html>
+  <head>
+    <title>ES2015 Modules</title>
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/app.js"></script>
+  </head>
 
-  xhr.addEventListener("readystatechange", function handleReadyStateChange() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      console.log(JSON.parse(xhr.responseText));
-    }
-  });
-
-  xhr.open("GET", "http://localhost:5050/cars");
-  xhr.send();
-
-  // Implement the following "myFetch" function.
-  // I should be able to copy and paste the following code into your file, and it should work as is.
-  // In your solution, you must use the XHR API to make the Ajax call. You may not use the newer Fetch api.
-
-  myFetch("http://localhost:5050/cars").then(cars => console.log(cars));
-
-</script>
+  <body>
+    <h1>ES2015 Modules</h1>
+  </body>
+</html>
